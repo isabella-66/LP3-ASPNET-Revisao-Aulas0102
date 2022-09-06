@@ -22,6 +22,19 @@ public class OperacoesMatematicasController : Controller
     {
         return View(numeros);
     }
+
+    public IActionResult Sub() 
+    {
+        return View();
+    }
+
+    public IActionResult SubResultado([FromForm] double numeroUm, double numeroDois) 
+    {
+        ViewBag.NumeroUm = numeroUm;
+        ViewBag.numeroDois = numeroDois;
+        ViewBag.Resultado = numeroUm - numeroDois;
+        return View();
+    }
     
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
